@@ -39,7 +39,7 @@ void    ScalarConverter::ConvertFloat( const std::string& l )
     float       f = std::stof( str );
 
     //char conversion
-    if ( f< 0 || f > 127 )
+    if ( f < 0 || f > 127 )
         std::cout << "char: impossible" << std::endl;
     else if ( f < 32 || f > 126 )
         std::cout   << "char: Non displayable" << std::endl;
@@ -59,4 +59,30 @@ void    ScalarConverter::ConvertFloat( const std::string& l )
     //double conversion
     std::cout   << "double: " << std::fixed << std::setprecision(1)
                 << f << std::endl;
+}
+
+void    ScalarConverter::ConvertDouble( const std::string& l )
+{
+    int d = stod( l );
+
+    if ( d < 0 || d > 127 )
+        std::cout << "char: impossible" << std::endl;
+    else if ( d < 32 || d > 126 )
+        std::cout << "char: Non displayable character" << std::endl;
+    else
+        std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
+    
+    //int conversion
+    if ( d < INT_MIN || d > INT_MAX )
+        std::cout << "int: impossible" << std::endl;
+    else
+        std::cout << "int: " << static_cast<int>(d) << std::endl;
+    
+    //float conversion
+    std::cout   << "float: " << std::fixed << std::setprecision(1)
+                << d << "f" << std::endl;
+
+    //double
+    std::cout   << "double: " << std::fixed << std::setprecision(1)
+                << d << std::endl;
 }

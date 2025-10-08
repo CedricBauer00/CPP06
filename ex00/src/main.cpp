@@ -28,7 +28,7 @@ int main()
     
     std::cout << "\n======= Float Tests =======\n" << std::endl;
 
-    std::cout << "\n--- Test 1: ---\n" << std::endl;
+    std::cout << "\n--- Test 1: Normal float: (65.0f) ---\n" << std::endl;
     ScalarConverter::convert( "65.0f" );
     std::cout << "\n--- Test 2: ---\n" << std::endl;
     ScalarConverter::convert( "65.5f" );
@@ -45,8 +45,22 @@ int main()
     std::cout << "\n--- Test 5: small decimal test: (0.1f) ---\n" << std::endl;
     ScalarConverter::convert( "0.1f" );
 
+    std::cout << "\n======= Double Tests =======\n" << std::endl;
 
-
+    std::cout << "\n--- Test 1: Normal double: (65.0) ---\n" << std::endl;
+    ScalarConverter::convert( "65.0" );
+    std::cout << "\n--- Test 2: Negative double: (-65.0) ---\n" << std::endl;
+    ScalarConverter::convert( "-65.0" );
+    std::cout << "\n--- Test 3: Decimal double: (65.5) ---\n" << std::endl;
+    ScalarConverter::convert( "65.5" );
+    std::cout << "\n--- Test 4: Non displayable: (0.0) ---\n" << std::endl;
+    ScalarConverter::convert( "0.0" );
+    std::cout << "\n--- Test 5: Impossible negative: (-1.0) ---\n" << std::endl;
+    ScalarConverter::convert( "-1.0" );
+    std::cout << "\n--- Test 6: Impossible large: (300.5) ---\n" << std::endl;
+    ScalarConverter::convert( "300.5" );
+    std::cout << "\n--- Test 7: small decimal: (0.1) ---\n" << std::endl;
+    ScalarConverter::convert( "0.1" );
 }
 
 // ./convert 0

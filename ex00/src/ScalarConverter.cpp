@@ -31,8 +31,8 @@ void ScalarConverter::convert( const std::string& literal )
         ConvertInt( literal );
     else if ( isFloat( literal ) )
         ConvertFloat( literal );
-    // if ( !isDouble( literal ) )
-    //     ConvertDouble( literal );
+    else if ( isDouble( literal ) )
+        ConvertDouble( literal );
     else
         std::cout << "Unknown type: " << literal << std::endl;
 }
