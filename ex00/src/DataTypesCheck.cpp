@@ -22,6 +22,10 @@ bool    ScalarConverter::isChar( const std::string& l )
 
 bool    ScalarConverter::isDouble( const std::string& l )
 {
+    //nanf +inff -inff
+    if ( l == "nan" || l == "+inf" || l == "-inf" )
+        return ( true );
+    
     try
     {
         if ( l.find( 'f' ) != std::string::npos)
@@ -38,6 +42,10 @@ bool    ScalarConverter::isDouble( const std::string& l )
 
 bool    ScalarConverter::isFloat( const std::string& l )
 {
+    //nanf +inff -inff
+    if ( l == "nanf" || l == "+inff" || l == "-inff" )
+        return ( true );
+
     try
     {
         if ( l.back() != 'f' ) //wenn kein f hinter Zahl dann kein Float

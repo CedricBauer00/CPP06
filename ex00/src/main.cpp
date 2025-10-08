@@ -61,6 +61,15 @@ int main()
     ScalarConverter::convert( "300.5" );
     std::cout << "\n--- Test 7: small decimal: (0.1) ---\n" << std::endl;
     ScalarConverter::convert( "0.1" );
+    std::cout << "\n--- Test 8: random decimal: (37.61342) ---\n" << std::endl;
+    ScalarConverter::convert( "37.61342" );
+
+    std::cout << "\n======= Special cases =======\n" << std::endl;
+    
+    ScalarConverter::convert( "nan" );
+    ScalarConverter::convert( "nanf" );
+    ScalarConverter::convert( "+inff" );
+    ScalarConverter::convert( "-inff" );
 }
 
 // ./convert 0
