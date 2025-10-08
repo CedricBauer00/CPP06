@@ -2,7 +2,7 @@ NAME = Converter
 SRC = src/main.cpp \
 		src/ScalarConverter.cpp \
 		src/DataTypesCheck.cpp \
-		src/ConvertChar.cpp
+		src/ConvertFuncs.cpp
 
 OBJ := $(SRC:%.cpp=%.o)
 

@@ -32,3 +32,31 @@ void    ScalarConverter::ConvertInt( const std::string& l )
     std::cout   << "double: " << std::fixed << std::setprecision(1)
                 << static_cast<double>(i) << std::endl;
 }
+
+void    ScalarConverter::ConvertFloat( const std::string& l )
+{
+    std::string str = l.substr( 0, l.length() - 1);
+    float       f = std::stof( str );
+
+    //char conversion
+    if ( f< 0 || f > 127 )
+        std::cout << "char: impossible" << std::endl;
+    else if ( f < 32 || f > 126 )
+        std::cout   << "char: Non displayable" << std::endl;
+    else
+        std::cout   << "char: '" << static_cast<char>(f) << "'" << std::endl;
+
+    //int conversion
+    if ( f > INT_MAX || f < INT_MIN )
+        std::cout   << "int: impossible" << std::endl;
+    else
+        std::cout   << "int: " << static_cast<int>(f) << std::endl;
+    
+    //float conversion
+    std::cout   << "float: " << std::fixed << std::setprecision(1)
+                << f << "f" << std::endl;
+    
+    //double conversion
+    std::cout   << "double: " << std::fixed << std::setprecision(1)
+                << f << std::endl;
+}

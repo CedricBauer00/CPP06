@@ -42,7 +42,6 @@ bool    ScalarConverter::isFloat( const std::string& l )
     {
         if ( l.back() != 'f' ) //wenn kein f hinter Zahl dann kein Float
             return ( false );
-        
         std::string delF = l.substr( 0, l.length() - 1 ); //deletes 'f' character behind float number
 
         size_t  pos;

@@ -27,10 +27,10 @@ void ScalarConverter::convert( const std::string& literal )
 {
     if ( isChar( literal ) )
         ConvertChar( literal );
-    else if ( !isInt( literal ) )
+    else if ( isInt( literal ) )
         ConvertInt( literal );
-    // if ( !isFloat( literal ) )
-    //     ConvertFloat( literal );
+    else if ( isFloat( literal ) )
+        ConvertFloat( literal );
     // if ( !isDouble( literal ) )
     //     ConvertDouble( literal );
     else
