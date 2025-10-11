@@ -12,7 +12,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++17
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME) > /dev/null 2>1 && echo "\033[32mCompilation successful!\033[0m"
+	@$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME) > /dev/null 2>&1 && echo "\033[32mCompilation successful!\033[0m"
 
 %.o: %.cpp
 	@$(CXX) $(CXXFLAGS) -o $@ -c $<
