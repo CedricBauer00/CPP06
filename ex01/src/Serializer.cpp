@@ -8,13 +8,13 @@ Serializer::Serializer()
 Serializer::Serializer( const Serializer& copy )
 {
     ( void )copy;
-    std::cout << "Copy Serializer destrcutor" << std::endl;
+    std::cout << "Copy Serializer constrcutor" << std::endl;
 }
 
-Serializer& operator=( const Serializer& copy )
+Serializer& Serializer::operator=( const Serializer& copy )
 {
     std::cout << "Assignment Serializer operator!" << std::endl;
-    if ( this != copy ) {}
+    if ( this != &copy ) {}
     return ( *this );
 }
 
