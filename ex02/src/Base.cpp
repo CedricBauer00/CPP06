@@ -44,11 +44,31 @@ void    Base::identify( Base& p )
 {
     //prints actual type of object referenced by p ------ using pointer inside this function is forbidden
     std::cout << "Acutal type of object referenced: ";
-    if ( dynamic_cast<A*>( &p ) )
-        std::cout << "\33[33mA\033[0m";
-    else if ( dynamic_cast<B*>( &p ) )
-        std::cout << "\33[33mB\033[0m";
-    else if ( dynamic_cast<C*>( &p ) )
-        std::cout << "\33[33mC\033[0m";
+    try
+    {
+        ( void )dynamic_cast<A&>( p );
+        std::cout << "\033[34mA\033[0m";
+    }
+    catch( std::bad_cast& )
+    {
+        try
+        {
+            ( void )dynamic_cast<B&>( p );
+            std::cout << "\033[33mB\033[0m";
+        }
+        catch( std::bad_cast& )
+        {
+            try
+            {
+                ( void )dynamic_cast<C&>( p );
+                std::cout << "\033[33mC\033[0m";
+            }
+            catch( std::bad_cast& )
+            {
+                std::cout << "\033[33mUnknown\033[0m";
+            }
+            
+        }
+    }
     std::cout << std::endl;
 }
