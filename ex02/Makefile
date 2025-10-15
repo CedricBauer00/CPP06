@@ -1,8 +1,10 @@
-NAME = Serializer
+NAME = Base
+
 SRC = src/main.cpp \
-			src/Data.cpp \
-			src/Serializer.cpp
-		
+		src/A.cpp \
+		src/B.cpp \
+		src/C.cpp
+
 OBJ := $(SRC:%.cpp=%.o)
 
 CXX = c++

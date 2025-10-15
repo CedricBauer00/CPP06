@@ -8,7 +8,7 @@ Serializer::Serializer()
 Serializer::Serializer( const Serializer& copy )
 {
     ( void )copy;
-    std::cout << "Copy Serializer constrcutor" << std::endl;
+    std::cout << "Copy Serializer constructor" << std::endl;
 }
 
 Serializer& Serializer::operator=( const Serializer& copy )
@@ -20,15 +20,15 @@ Serializer& Serializer::operator=( const Serializer& copy )
 
 Serializer::~Serializer()
 {
-    std::cout << "Serializer destructor!" << std::endl
+    std::cout << "Serializer destructor!" << std::endl;
 }
 
-uintptr_t   serializer( Data* ptr ) //takes a pinter, converts it to unsigned integer type uintptr_t
+uintptr_t   Serializer::serializer( Data* ptr ) //takes a pinter, converts it to unsigned integer type uintptr_t
 {
-    //still to implement
+    return ( reinterpret_cast<uintptr_t>( ptr ) );
 }
 
-Data*   deserialize( uintptr_t raw )
+Data*   Serializer::deserialize( uintptr_t raw ) //takes uintptr and converts it to Data* datatype
 {
-    //still to implement
+    return ( reinterpret_cast<Data*>( raw ) );
 } 
