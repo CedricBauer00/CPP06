@@ -3,7 +3,8 @@ NAME = Base
 SRC = src/main.cpp \
 		src/A.cpp \
 		src/B.cpp \
-		src/C.cpp
+		src/C.cpp \
+		src/Base.cpp
 
 OBJ := $(SRC:%.cpp=%.o)
 

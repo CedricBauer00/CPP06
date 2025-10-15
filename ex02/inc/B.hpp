@@ -1,12 +1,10 @@
 #pragma once
 
-class Base;
+#include "Base.hpp"
 
-class B
+class B : public Base
 {
-private:
-    /* data */
-public:
-    B(/* args */);
-    ~B();
+    public:
+        B();
+        ~B();
 };

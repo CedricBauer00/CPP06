@@ -2,11 +2,9 @@
 
 #include "Base.hpp"
 
-class A
-{
-private:
-    
-public:
-    A(/* args */);
-    ~A();
+class A : public Base
+{    
+    public:
+        A();
+        ~A();
 };

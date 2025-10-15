@@ -11,13 +11,12 @@ class   C;
 
 class Base
 {
-    private:
-        Base(/* args */);
+    protected:
+        Base();
 
     public:
-        virtual ~Base();
-        Base*   generate( void );
-        void    identify( Base *p );
-        void    identify( Base& p );
-
+        virtual         ~Base();
+        static Base*    generate(void);
+        static void     identify(Base* p);
+        static void     identify(Base& p);
 };

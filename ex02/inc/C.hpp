@@ -4,9 +4,7 @@
 
 class C : public Base
 {
-private:
-    /* data */
-public:
-    C(/* args */);
-    ~C();
+    public:
+        C();
+        ~C();
 };

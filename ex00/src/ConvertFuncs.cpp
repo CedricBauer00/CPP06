@@ -8,29 +8,29 @@ void    ScalarConverter::ConvertChar( const std::string& l )
     double  d = static_cast<double>(c);
 
     if ( c >= 32 && c <= 126 )
-        std::cout << "char: \'" << c << "\'" << std::endl;
+        std::cout << "\033[38;5;75mchar: \'" << c << "\'\033[0m" << std::endl;
     else
         std::cout << "char: Non displayable" << std::endl;
-    std::cout << "int: " << i << std::endl;
-    std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
-    std::cout << "double: " << std::fixed << std::setprecision(1) << d << std::endl;
+    std::cout << "\033[91mint: " << i << "\033[0m" << std::endl;
+    std::cout << "\033[38;5;202mfloat: " << std::fixed << std::setprecision(1) << f << "f\033[0m" << std::endl;
+    std::cout << "\033[95mdouble: " << std::fixed << std::setprecision(1) << d << "\033[0m" << std::endl;
 }
 
 void    ScalarConverter::ConvertInt( const std::string& l )
 {
     int i = std::stoi( l );
     if ( i < 0 || i > 127 )
-        std::cout << "char: impossible" << std::endl;
+        std::cout << "\033[38;5;75mchar: impossible\033[0m" << std::endl;
     else if ( i < 32 || i > 126)
-        std::cout << "char: Non displayable" << std::endl;
+        std::cout << "\033[38;5;75mchar: Non displayable\033[0m" << std::endl;
     else
-        std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
+        std::cout << "\033[38;5;75mchar: '" << static_cast<char>(i) << "'\033[0m" << std::endl;
 
-    std::cout   << "int: " << i << std::endl;
-    std::cout   << "float: " << std::fixed << std::setprecision(1) 
-                << static_cast<float>(i) << "f" << std::endl;
-    std::cout   << "double: " << std::fixed << std::setprecision(1)
-                << static_cast<double>(i) << std::endl;
+    std::cout   << "\033[91mint: " << i << "\033[0m" << std::endl;
+    std::cout   << "\033[38;5;202mfloat: " << std::fixed << std::setprecision(1) 
+                << static_cast<float>(i) << "f\033[0m" << std::endl;
+    std::cout   << "\033[95mdouble: " << std::fixed << std::setprecision(1)
+                << static_cast<double>(i) << "\033[0m" << std::endl;
 }
 
 void    ScalarConverter::ConvertFloat( const std::string& l )
@@ -52,32 +52,32 @@ void    ScalarConverter::ConvertFloat( const std::string& l )
     //Conversion
     if ( std::isnan( f ) || std::isinf( f ) )
     {
-        std::cout << "char: impossible" << std::endl;
-        std::cout << "int: impossible" << std::endl;
+        std::cout << "\033[38;5;75mchar: impossible\033[0m" << std::endl;
+        std::cout << "\033[91mint: impossible\033[0m" << std::endl;
     }
     else
     {
         if ( f < 0 || f > 127 )
-            std::cout << "char: impossible" << std::endl;
+            std::cout << "\033[38;5;75mchar: impossible\033[0m" << std::endl;
         else if ( f < 32 || f > 126 )
-            std::cout   << "char: Non displayable" << std::endl;
+            std::cout   << "\033[38;5;75mchar: Non displayable\033[0m" << std::endl;
         else
-            std::cout   << "char: '" << static_cast<char>(f) << "'" << std::endl;
+            std::cout   << "\033[38;5;75mchar: '" << static_cast<char>(f) << "'\033[0m" << std::endl;
 
         //int conversion
         if ( f > INT_MAX || f < INT_MIN )
-            std::cout   << "int: impossible" << std::endl;
+            std::cout   << "\033[91mint: impossible" << std::endl;
         else
-            std::cout   << "int: " << static_cast<int>(f) << std::endl;
+            std::cout   << "\033[91mint: " << static_cast<int>(f) << "\033[0m" << std::endl;
     }
     
     //float conversion
-    std::cout   << "float: " << std::fixed << std::setprecision(1)
-                << f << "f" << std::endl;
+    std::cout   << "\033[38;5;202mfloat: " << std::fixed << std::setprecision(1)
+                << f << "f\033[0m" << std::endl;
     
     //double conversion
-    std::cout   << "double: " << std::fixed << std::setprecision(1)
-                << f << std::endl;
+    std::cout   << "\033[95mdouble: " << std::fixed << std::setprecision(1)
+                << f << "\033[0m" << std::endl;
 }
 
 void    ScalarConverter::ConvertDouble( const std::string& l )
@@ -94,24 +94,24 @@ void    ScalarConverter::ConvertDouble( const std::string& l )
     {
         d = std::stod( l );
         if ( d < 0 || d > 127 )
-        std::cout << "char: impossible" << std::endl;
+        std::cout << "\033[38;5;75mchar: impossible\033[0m" << std::endl;
         else if ( d < 32 || d > 126 )
-            std::cout << "char: Non displayable" << std::endl;
+            std::cout << "\033[38;5;75mchar: Non displayable\033[0m" << std::endl;
         else
-            std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
+            std::cout << "\033[38;5;75mchar: '" << static_cast<char>(d) << "'\033[0m" << std::endl;
         
         //int conversion
         if ( d < INT_MIN || d > INT_MAX )
-            std::cout << "int: impossible" << std::endl;
+            std::cout << "\033[91mint: impossible\033[0m" << std::endl;
         else
-            std::cout << "int: " << static_cast<int>(d) << std::endl;
+            std::cout << "\033[91mint: " << static_cast<int>(d) << "\033[0m" << std::endl;
         
         //float conversion
-        std::cout   << "float: " << std::fixed << std::setprecision(1)
-                    << static_cast<float>(d) << "f" << std::endl;
+        std::cout   << "\033[38;5;202mfloat: " << std::fixed << std::setprecision(1)
+                    << static_cast<float>(d) << "f\033[0m" << std::endl;
 
         //double
-        std::cout   << "double: " << std::fixed << std::setprecision(1)
-                    << d << std::endl;
+        std::cout   << "\033[95mdouble: " << std::fixed << std::setprecision(1)
+                    << d << "\033[0m" << std::endl;
     }
 }
