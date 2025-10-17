@@ -65,7 +65,8 @@ void    ScalarConverter::ConvertFloat( const std::string& l )
             std::cout   << "\033[38;5;75mchar: '" << static_cast<char>(f) << "'\033[0m" << std::endl;
 
         //int conversion
-        if ( f > INT_MAX || f < INT_MIN )
+        if ( f > static_cast<float>( std::numeric_limits<int>::max() )
+            || f < static_cast<float>( std::numeric_limits<int>::min()) )
             std::cout   << "\033[91mint: impossible" << std::endl;
         else
             std::cout   << "\033[91mint: " << static_cast<int>(f) << "\033[0m" << std::endl;
@@ -113,5 +114,18 @@ void    ScalarConverter::ConvertDouble( const std::string& l )
         //double
         std::cout   << "\033[95mdouble: " << std::fixed << std::setprecision(1)
                     << d << "\033[0m" << std::endl;
+        return ;
     }
+
+    // case fuer nan, +inf, -inf
+    std::cout << "\033[38;5;75mchar: impossible\033[0m" << std::endl;
+    std::cout << "\033[91mint: impossible\033[0m" << std::endl;
+
+    if ( l == "nan" )
+        std::cout << "\033[38;5;202mfloat: nanf\033[0m" << std::endl;
+    else if ( l == "+inf" )
+        std::cout << "\033[38;5;202mfloat: inff\033[0m" << std::endl;
+    else if ( l == "-inf" )
+        std::cout << "\033[38;5;202mfloat: -inff\033[0m" << std::endl;
+    std::cout << "\033[95mdouble: " << l << "\033[0m" << std::endl;
 }

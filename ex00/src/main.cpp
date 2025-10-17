@@ -4,26 +4,26 @@ int main()
 {
     std::cout << "\n======= Char Tests =======\n" << std::endl;
 
-    std::cout << "--- Test 1:  'a' ---" << std::endl;
+    std::cout << "--- Test 1:  'a' ---\n" << std::endl;
     ScalarConverter::convert( "'a'" );
-    std::cout << "--- Test 2:  '5' ---" << std::endl;
+    std::cout << "\n--- Test 2:  '5' ---\n" << std::endl;
     ScalarConverter::convert( "'5'" );
-    std::cout << "--- Test 3:  '*' ---" << std::endl;
+    std::cout << "\n--- Test 3:  '*' ---\n" << std::endl;
     ScalarConverter::convert( "'*'" );
 
     std::cout << "\n======= Int Tests =======\n" << std::endl;
 
     std::cout << "--- Test 1: Normal int: 42 ---\n" << std::endl;
     ScalarConverter::convert( "42" );
-    std::cout << "--- Test 2: Normal int: 65 ('A') ---\n" << std::endl;
+    std::cout << "\n--- Test 2: Normal int: 65 ('A') ---\n" << std::endl;
     ScalarConverter::convert( "65" );
-    std::cout << "--- Test 3: Non displayable (0) ---\n" << std::endl;
+    std::cout << "\n--- Test 3: Non displayable (0) ---\n" << std::endl;
     ScalarConverter::convert( "0" );
-    std::cout << "--- Test 4: Non displayable (31) ---\n" << std::endl;
+    std::cout << "\n--- Test 4: Non displayable (31) ---\n" << std::endl;
     ScalarConverter::convert( "31" );
-    std::cout << "--- Test 5: Impossible range (-1) ---\n" << std::endl;
+    std::cout << "\n--- Test 5: Impossible range (-1) ---\n" << std::endl;
     ScalarConverter::convert( "-1" );
-    std::cout << "--- Test 6: Impossible range (200) ---\n" << std::endl;
+    std::cout << "\n--- Test 6: Impossible range (200) ---\n" << std::endl;
     ScalarConverter::convert( "200" );
     
     std::cout << "\n======= Float Tests =======\n" << std::endl;
@@ -65,10 +65,17 @@ int main()
     ScalarConverter::convert( "37.61342" );
 
     std::cout << "\n======= Special cases =======\n" << std::endl;
-    
+
+    std::cout << "\n--- 'nan' tests ---\n" << std::endl;
     ScalarConverter::convert( "nan" );
+
+    std::cout << "\n--- 'nanf' tests ---\n" << std::endl;
     ScalarConverter::convert( "nanf" );
+
+    std::cout << "\n--- '+inff' tests ---\n" << std::endl;
     ScalarConverter::convert( "+inff" );
+
+    std::cout << "\n--- '-inff' tests ---\n" << std::endl;
     ScalarConverter::convert( "-inff" );
 }
 
