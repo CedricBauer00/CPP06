@@ -27,5 +27,16 @@ int main()
                 << "\033[0m"
                 << std::endl;
 
+    std::cout << "ptr addr:         "
+                << ptr
+                << std::endl;
+    std::cout << "restored addr:    "
+                << restored
+                << std::endl;
+    std::cout << "same pointer:     "
+                << ( restored == ptr ? "yes" : "no" )
+                << std::endl;
+
+
     return ( 0 );
 }
