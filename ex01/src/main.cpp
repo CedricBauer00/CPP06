@@ -5,7 +5,6 @@ int main()
 {
     Data        data( "Hello World", 100 );
     Data*       ptr = &data;
-    uintptr_t   raw = Serializer::serializer( ptr );
     
     std::cout << "Before serializing: \033[38;5;75m"
                 << data.text
@@ -13,6 +12,8 @@ int main()
                 << data.number
                 << "\e[0m"
                 << std::endl;
+
+    uintptr_t   raw = Serializer::serializer( ptr );
                 
     std::cout << "Raw value: \033[33m" 
                 << raw 
@@ -20,6 +21,7 @@ int main()
                 << std::endl;
 
     Data*   restored = Serializer::deserialize( raw );
+    
     std::cout << "Restored Data: \033[38;5;75m"
                 << restored->text
                 << "\e[0m, \033[38;5;75m"
