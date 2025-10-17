@@ -8,8 +8,12 @@ int main()
     Base* ptr = Base::generate();
     Base::identify( ptr );
     Base::identify( *ptr );
-
+    
     delete( ptr );
+    
+    Base* nullp = nullptr;
+
+    Base::identify( nullp );
 
     return ( 0 );
 }

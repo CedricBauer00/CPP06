@@ -15,7 +15,7 @@ Base::~Base()
 
 Base*   Base::generate( void )
 {
-    //randomlu instantiates A/B/C returns instance as a Base pointer
+    //randomly instantiates A/B/C returns instance as a Base pointer
     std::srand( std::time( nullptr ) ); // randomizer
     int r = std::rand() % 3;
     switch ( r )
@@ -37,6 +37,8 @@ void    Base::identify( Base* p )
         std::cout << "\033[35mB\033[0m";
     else if ( dynamic_cast<C*>( p ) )
         std::cout << "\033[35mC\033[0m";
+    else
+        std::cout << "\e[31mUnknown\e[0m" << std::endl;
     std::cout << std::endl;
 }
 
